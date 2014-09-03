@@ -1,0 +1,139 @@
+package main;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import testcases.AddRecipe;
+import testcases.DeleteRecipe;
+import testcases.EditRecipe;
+import utility.XPaths;
+import main.ExcelReader;
+
+public class RunnerClass {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		WebDriver wd = null;
+		
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("appium-version", "1.0");
+		capabilities.setCapability("platformName", "iOS");
+		capabilities.setCapability("platformVersion", "7.1");
+		capabilities.setCapability("deviceName", "iPhone Retina (3.5-inch)");
+		capabilities.setCapability("app", "/Users/umairrashid/Downloads/iPhoneCoreDataRecipes/build/Release-iphonesimulator/Recipes.app");
+		//capabilities.setCapability("app", "/Users/Shared/Jenkins/Home/jobs/Guild2 Job/workspace/build/Debug-iphoneos/CII.app");
+		
+	
+		try {
+			wd = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//String lWorkDir = new String(System.getProperty("user.dir"));
+		ExcelReader excelFile = new ExcelReader("AddRecipe.xlsx");
+		
+		XPaths xp = new XPaths();
+		
+				
+		// ********* Add Recipe Code **********//
+		
+		String Rname = null;
+		String Rdesc = null;
+		String Rtime = null;
+		
+		
+
+		
+		AddRecipe ar = new AddRecipe("","","");
+		
+		
+
+		
+		for(int rows=0; rows<excelFile.getRowCount("AddRecipe"); rows++)
+		{
+	
+			Rname = excelFile.getExcelCellValue(rows, 0);
+			Rdesc = excelFile.getExcelCellValue(rows, 1);
+			Rtime = excelFile.getExcelCellValue(rows, 2);
+			
+			System.out.println("The Recipe Name is: " + Rname);
+			System.out.println("The Recipe Description is: " + Rdesc);
+			System.out.println("The Recipe time is: " + Rtime);
+			
+			ar.AddRecipe_func(wd, xp, Rname, Rdesc, Rtime);
+				
+		
+		}
+		
+	
+		
+		//********* End Add Recipe Code ************//
+		
+		
+		//********* Edit Recipe Code *************//
+		
+		
+		String Rcp_Name;
+		String Rcp_overview;
+		String Rcp_time;
+		String Rcp_IngName;
+		String Rcp_IngAmnt;
+		
+		EditRecipe er = new EditRecipe();
+		
+		for(int rows=0; rows<excelFile.getRowCount("EditRecipe"); rows++)
+		{
+			
+
+			Rcp_Name = excelFile.getExcelCellValue(rows, 0);
+			Rcp_overview = excelFile.getExcelCellValue(rows, 1);
+			Rcp_time = excelFile.getExcelCellValue(rows, 2);
+			Rcp_IngName = excelFile.getExcelCellValue(rows, 3);
+			Rcp_IngAmnt = excelFile.getExcelCellValue(rows, 4);
+			
+			
+			System.out.println("The Recipe Name is: " + Rcp_Name);
+			System.out.println("The Recipe overview is: " + Rcp_overview);
+			System.out.println("The Recipe time is: " + Rcp_time);
+			System.out.println("The Recipe Ingredients is: " + Rcp_IngName);
+			System.out.println("The Recipe Ingredient amount is: " + Rcp_IngAmnt);
+			
+			er.Edit_Recipe(wd, xp, Rcp_Name, Rcp_overview, Rcp_time, Rcp_IngName, Rcp_IngAmnt);
+			
+		}
+		
+		
+		//********* End Edit Recipe Code ************//
+		
+		
+		//********* Starts Delete Recipe Code ************//
+
+		String Rcp_delete_Name;
+		
+		DeleteRecipe dr = new DeleteRecipe();
+		
+		for(int rows=0; rows<excelFile.getRowCount("DeleteRecipe"); rows++)
+		{
+			
+			Rcp_delete_Name = excelFile.getExcelCellValue(rows, 0);
+			
+			System.out.println("The Recipe Name is: " + Rcp_delete_Name);
+			
+			dr.DeleteRecipe(wd, xp, Rcp_delete_Name);
+			
+		}
+		
+		wd.quit();
+		
+	}
+
+}
+
+
+
