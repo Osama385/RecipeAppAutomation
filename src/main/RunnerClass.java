@@ -3,10 +3,12 @@ package main;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import testcases.AddCategory;
 import testcases.AddRecipe;
 import testcases.DeleteRecipe;
 import testcases.EditRecipe;
@@ -39,6 +41,9 @@ public class RunnerClass {
 		ExcelReader excelFile = new ExcelReader("AddRecipe.xlsx");
 		
 		XPaths xp = new XPaths();
+		
+
+		
 		
 				
 		// ********* Add Recipe Code **********//
@@ -112,6 +117,31 @@ public class RunnerClass {
 		//********* End Edit Recipe Code ************//
 		
 		
+		//********* Starts Add Category in Recipe Code ************//
+		
+		String R_name_4_category;
+		String R_category;
+		
+		AddCategory ac = new AddCategory();
+		
+		for(int rows=0; rows<excelFile.getRowCount("AddCategory"); rows++)
+		{
+			
+			R_name_4_category = excelFile.getExcelCellValue(rows, 0);
+			R_category = excelFile.getExcelCellValue(rows, 1);
+			
+			System.out.println("The Recipe Name is: " + R_name_4_category);
+			System.out.println("The Recipe Name is: " + R_category);
+			
+			ac.AddCategory(wd, xp, R_name_4_category, R_category);
+			
+			
+		}
+		
+		
+		//********* End Add Category in Recipe Code ************//
+		
+		
 		//********* Starts Delete Recipe Code ************//
 
 		String Rcp_delete_Name;
@@ -128,6 +158,9 @@ public class RunnerClass {
 			dr.DeleteRecipe(wd, xp, Rcp_delete_Name);
 			
 		}
+		
+		//********* Ends Delete Recipe Code ************//
+		
 		
 		wd.quit();
 		
