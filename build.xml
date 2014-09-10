@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="ScenarioName0" name="ZenpriseJAF">
+	<property name="SRC" value="${basedir}/src" />
+	<property name="LIB" value="${basedir}/lib" />
+	<property name="BIN" value="${basedir}/bin" />
+	<target name="ScenarioName0">
+		<java classname="main.RunnerClass" fork="true" maxmemory="12288m">
+			<classpath>
+
+				<pathelement location="${BIN}" />
+				<fileset dir="${LIB}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+
+		</java>
+	</target>
+	
+</project>
