@@ -31,8 +31,8 @@ public class XPaths {
 	
 	public String Delete_Switch_Recipe = "//UIATableView/following::UIASwitch[contains(@name,'##MARKER02')]";
 	
-	public String Delete_Button_Recipe = "//UIATableView/following::UIASwitch[contains(@name,'##MARKER03')]/parent::UIATableCell"
-			+ "/child::UIAButton[@name='Delete']";
+	public String Delete_Button_Recipe = 
+			"//UIATableView/following::UIASwitch[contains(@name,'##MARKER03')]/parent::UIATableCell/child::UIAButton[@name='Delete']";
 	
 	
 	
