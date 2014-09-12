@@ -31,7 +31,6 @@ public class ExcelReader {
 	
 	private SimpleDateFormat objSimpleDateFormat = null;
 	
-	
 	public void setExcelCell(int lRow, int lCol){
 		
 		excelCell = excelSheet.getRow(lRow).getCell(lCol);
