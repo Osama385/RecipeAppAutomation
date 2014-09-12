@@ -57,12 +57,12 @@ public class AddRecipe {
 		if(ut.IsElementPresent(xp.Add_button, webs))
 		{
 			webs.findElement(By.xpath(xp.Add_button)).click();
-			System.out.println("Add button is found and clicked successfully");
+			System.out.println("Add button is found and clicked successfully from Recipe Home Screen");
 			
 			if(ut.IsElementPresent(xp.Recipe_Name_Field, webs))
 			{
 				webs.findElement(By.xpath(xp.Recipe_Name_Field)).sendKeys(Rname);
-				System.out.println("Add Recipe button is found and Data is entered successfully");
+				System.out.println("Recipe name field is found and data is entered successfully");
 				
 				if(ut.IsElementPresent(xp.Save_Recipe_Button, webs))
 				{
@@ -73,12 +73,12 @@ public class AddRecipe {
 					
 					if(ut.IsElementPresent(v0, webs))
 					{
-						System.out.println("Recipe" +Rname + "is created successfully");
+						System.out.println("Recipe " +Rname + " is created successfully");
 						
 						if(ut.IsElementPresent(xp.Return2Rec_Button, webs))
 						{
 							webs.findElement(By.xpath(xp.Return2Rec_Button)).click();
-							System.out.println("Return to Recipe button found and clicked successfully");
+							System.out.println("Return to Recipe button is found and clicked successfully");
 							
 							String v1 = xp.Recipe_List.replace("##MARKER", Rname);
 							
@@ -92,7 +92,7 @@ public class AddRecipe {
 							}
 							else
 							{
-								System.err.println("Recipe is not found in Main Recipe Menu");
+								System.err.println("Recipe is not found in Main Recipe List");
 								webs.quit();
 							}
 							
@@ -121,14 +121,14 @@ public class AddRecipe {
 			}
 			else
 			{                        
-				System.err.println("Recipe Name field not found");
+				System.err.println("Recipe Name field is not found");
 				webs.quit();
 			}
 			
 		}
 		else 
 		{
-			System.err.println("Add button not found");
+			System.err.println("Add button is not found");
 			webs.quit();
 		}
 		

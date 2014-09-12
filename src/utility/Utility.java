@@ -32,7 +32,7 @@ public class Utility{
 	}
 	catch (Exception e)
 	{
-		System.out.println("/nException found");
+		System.out.println("\nException found");
 		e.printStackTrace();
 	}
 	return s;
