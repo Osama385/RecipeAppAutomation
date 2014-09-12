@@ -39,6 +39,7 @@ public class ExcelReader {
 	public XSSFCell getExcelCell(){
 		
 		return excelCell;
+		//test
 	}
 	
 	public int getExcelCellType(int row, int col){
