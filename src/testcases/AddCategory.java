@@ -78,7 +78,7 @@ public class AddCategory {
 										if(ut.IsElementPresent(xp.Return2Rec_Button, webs))
 										{
 											webs.findElement(By.xpath(xp.Return2Rec_Button)).click();
-											System.out.println("**** Edit functionality for adding Category is working successfully ****");
+											System.out.println("****Edit functionality for adding Category is working successfully ****");
 											
 										}
 										else

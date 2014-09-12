@@ -87,8 +87,8 @@ public class AddRecipe {
 							if(ut.IsElementPresent(v1, webs))
 							{
 								System.out.println("Recipe " + Rname + "is found in Main Recipe List");
+								//webs.quit();
 								
-								//
 							}
 							else
 							{
