@@ -34,7 +34,7 @@ public class ExcelReader {
 	public void setExcelCell(int lRow, int lCol){
 		
 		excelCell = excelSheet.getRow(lRow).getCell(lCol);
-		//Test
+		
 	}
 	
 	public XSSFCell getExcelCell(){
