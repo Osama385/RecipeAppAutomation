@@ -5,7 +5,7 @@ public class XPaths {
 	
 	//XPATHs for Add Recipe
 	
-	//public String Add_button = "//UIANavigationBar/descendant::UIAButton[@name='Add']"; // Add button Xpath
+	public String Add_button = "//UIANavigationBar/descendant::UIAButton[@name='Add']"; // Add button Xpath
 	
 	public String Recipe_Name_Field = "//UIATextField[@value='Recipe Name']";
 	
