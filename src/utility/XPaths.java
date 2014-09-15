@@ -5,7 +5,7 @@ public class XPaths {
 	
 	//XPATHs for Add Recipe
 	
-	public String Add_button = "//UIANavigationBar/descendant::UIAButton[@name='Add']"; // Add button Xpath
+	//public String Add_button = "//UIANavigationBar/descendant::UIAButton[@name='Add']"; // Add button Xpath
 	
 	public String Recipe_Name_Field = "//UIATextField[@value='Recipe Name']";
 	
@@ -56,7 +56,7 @@ public class XPaths {
 	
 	public String Check_Ingredient_Added = "//UIATableCell/descendant::UIAStaticText[contains(@name,'##MARKER05')]";
 	
-	public String Done_Button_onEditScreen = "//UIANavigationBar/descendant::UIAButton[@name='Dne']";
+	public String Done_Button_onEditScreen = "//UIANavigationBar/descendant::UIAButton[@name='Done']";
 	
 	
 	
