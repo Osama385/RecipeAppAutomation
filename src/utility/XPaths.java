@@ -35,7 +35,6 @@ public class XPaths {
 			"//UIATableView/following::UIASwitch[contains(@name,'##MARKER03')]/parent::UIATableCell/child::UIAButton[@name='Delete']";
 	
 	
-	
 
 	//XPaths for Edit Recipe
 	
@@ -57,7 +56,7 @@ public class XPaths {
 	
 	public String Check_Ingredient_Added = "//UIATableCell/descendant::UIAStaticText[contains(@name,'##MARKER05')]";
 	
-	public String Done_Button_onEditScreen = "//UIANavigationBar/descendant::UIAButton[@name='Done']";
+	public String Done_Button_onEditScreen = "//UIANavigationBar/descendant::UIAButton[@name='Dne']";
 	
 	
 	
