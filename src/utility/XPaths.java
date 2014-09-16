@@ -5,7 +5,7 @@ public class XPaths {
 	
 	//XPATHs for Add Recipe
 	
-	public String Add_button = "//UIANavigationBar/descendant::UIAButton[@name='']"; // Add button Xpath
+	public String Add_button = "//UIANavigationBar/descendant::UIAButton[@name='Add']"; // Add button Xpath
 	
 	public String Recipe_Name_Field = "//UIATextField[@value='Recipe Name']";
 	
@@ -20,7 +20,7 @@ public class XPaths {
 	public String Check_Recipe_Name = "//UIANavigationBar/descendant::UIAStaticText[@name='##MARKER0']";
 	
 	public String Recipe_List = "//UIATableView/following::UIAStaticText[contains(@name,'##MARKER')]";
-	
+	//123
 	
 	
 	//XPATHs for Delete Recipe
