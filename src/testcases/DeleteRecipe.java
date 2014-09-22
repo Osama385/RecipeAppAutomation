@@ -47,6 +47,18 @@ public class DeleteRecipe {
 						webs.findElement(By.xpath(vv3)).click();
 						System.out.println("Delete button is found and Clicked successfully");
 						
+						if(ut.IsElementPresent(xp.Done_Button_onEditScreen, webs))
+						{
+							webs.findElement(By.xpath(xp.Done_Button_onEditScreen)).click();
+							System.out.println("Done button after Delete Recipe is found and clicked successfully");
+							
+						}
+						else
+						{
+							System.err.println("Done Button after Delete Recipe is not found");
+							webs.quit();
+						}
+						
 					}
 					else
 					{

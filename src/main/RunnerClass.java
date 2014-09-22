@@ -1,5 +1,7 @@
 package main;
 
+import io.appium.java_client.AppiumDriver;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -20,6 +22,7 @@ public class RunnerClass {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		WebDriver wd = null;
+		AppiumDriver ad = null;
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("appium-version", "1.0");
