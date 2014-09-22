@@ -1,5 +1,9 @@
 package testcases;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileDriver;
+import io.appium.java_client.MobileElement;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -50,41 +54,46 @@ public class AddRecipe {
 		Rec_t = Recipe_time;
 	}
 	
-	public void AddRecipe_func(WebDriver webs, XPaths xp, String Rname, String Rdesc, String Rtime) throws Exception
+	public void AddRecipe_func(AppiumDriver webs, XPaths xp, String Rname, String Rdesc, String Rtime) throws Exception
 	{
 		Utility ut = new Utility();
+		MobileDriver md = null;
 		
-		if(ut.IsElementPresent(xp.Add_button, webs))
+		md = (MobileDriver) webs;
+		//MobileElement me = null;
+		if(ut.IsElementPresent(xp.Add_button, md))
 		{
-			webs.findElement(By.xpath(xp.Add_button)).click();
+			md.findElement(By.xpath(xp.Add_button)).click();
 			System.out.println("Add button is found and clicked successfully from Recipe Home Screen");
 			
-			if(ut.IsElementPresent(xp.Recipe_Name_Field, webs))
+			if(ut.IsElementPresent(xp.Recipe_Name_Field, md))
 			{
-				webs.findElement(By.xpath(xp.Recipe_Name_Field)).sendKeys(Rname);
+				//md.findElement(By.xpath(xp.Recipe_Name_Field)).sendKeys(Rname);
+				
+				((MobileElement) md.findElement(By.xpath(xp.Recipe_Name_Field))).setValue(Rname);
 				System.out.println("Recipe name field is found and data is entered successfully");
 				
-				if(ut.IsElementPresent(xp.Save_Recipe_Button, webs))
+				if(ut.IsElementPresent(xp.Save_Recipe_Button, md))
 				{
-					webs.findElement(By.xpath(xp.Save_Recipe_Button)).click();
+					md.findElement(By.xpath(xp.Save_Recipe_Button)).click();
 					System.out.println("Save Recipe button is found and clicked successfully");
 					
 					String v0 = xp.Check_Recipe_Name.replace("##MARKER0", Rname);
 					
-					if(ut.IsElementPresent(v0, webs))
+					if(ut.IsElementPresent(v0, md))
 					{
-						System.out.println("Recipe " +Rname + " is created successfully");
+						System.out.println("Recipe " + Rname + " is created successfully");
 						
-						if(ut.IsElementPresent(xp.Return2Rec_Button, webs))
+						if(ut.IsElementPresent(xp.Return2Rec_Button, md))
 						{
-							webs.findElement(By.xpath(xp.Return2Rec_Button)).click();
+							md.findElement(By.xpath(xp.Return2Rec_Button)).click();
 							System.out.println("Return to Recipe button is found and clicked successfully");
 							
 							String v1 = xp.Recipe_List.replace("##MARKER", Rname);
 							
-							ut.waitFor(v1, webs);
+							ut.waitFor(v1, md);
 							
-							if(ut.IsElementPresent(v1, webs))
+							if(ut.IsElementPresent(v1, md))
 							{
 								System.out.println("Recipe " + Rname + "is found in Main Recipe List");
 								//webs.quit();
@@ -94,28 +103,28 @@ public class AddRecipe {
 							else
 							{
 								System.err.println("Recipe is not found in Main Recipe List");
-								webs.quit();
+								md.quit();
 							}
 							
 						}
 						else
 						{
 							System.err.println("Return to Recipe button is not found");
-							webs.quit();
+							md.quit();
 						}
 						
 					}
 					else
 					{
 						System.err.println("Recipe Name is not found");
-						webs.quit();
+						md.quit();
 					}
 					
 				}
 				else
 				{
 					System.err.println("Save Recipe button is not found");
-					webs.quit();
+					md.quit();
 				}
 				
 				
@@ -123,14 +132,14 @@ public class AddRecipe {
 			else
 			{                        
 				System.err.println("Recipe Name field is not found");
-				webs.quit();
+				md.quit();
 			}
 			
 		}
 		else 
 		{
 			System.err.println("Add button is not found");
-			webs.quit();
+			md.quit();
 		}
 		
 		

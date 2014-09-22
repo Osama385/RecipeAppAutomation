@@ -1,5 +1,7 @@
 package testcases;
 
+import io.appium.java_client.MobileDriver;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -57,47 +59,57 @@ public class EditRecipe {
 		Recipe_Name = recipe_Name;
 	}
 
-	public void Edit_Recipe(WebDriver webs, XPaths xp, String R_Name, String R_overview, String R_time, String R_IngName, String R_IngAmnt)
+	public void Edit_Recipe(MobileDriver webs, XPaths xp, String R_Name, String R_overview, String R_time, String R_IngName, String R_IngAmnt)
 	{
 		
 		Utility ut = new Utility();
+		MobileDriver md = null;
 		
+		md = (MobileDriver) webs;
 		String v1 = xp.Recipe_List.replace("##MARKER", R_Name);
 		
-		if(ut.IsElementPresent(v1, webs))
+		if(ut.IsElementPresent(v1, md))
 		{
-			webs.findElement(By.xpath(v1)).click();
+			md.findElement(By.xpath(v1)).click();
 			System.out.println("Recipe" + R_Name + " is found in the List");
 			
 			String v2 = xp.Check_Recipe_Field_Value.replace("##MARKER04", R_Name);
 			
-			if(ut.IsElementPresent(v2, webs))
+			if(ut.IsElementPresent(v2, md))
 			{
 				System.out.println("Edit Recipe Screen is appeared successfully");
-				webs.findElement(By.xpath(xp.Edit_Recipe_Button)).click();
+				md.findElement(By.xpath(xp.Edit_Recipe_Button)).click();
 				
-				if(ut.IsElementPresent(xp.Overview_field, webs))
+				if(ut.IsElementPresent(xp.Overview_field, md))
 				{
-					webs.findElement(By.xpath(xp.Overview_field)).sendKeys(R_overview);
+					//md.findElement(By.xpath(xp.Overview_field)).sendKeys(R_overview);
+					((MobileElement) md.findElement(By.xpath(xp.Overview_field))).setValue(R_overview);
+					
 					System.out.println("Overview field is found and data is entered successfully");
 					
-					if(ut.IsElementPresent(xp.Time_field, webs))
+					if(ut.IsElementPresent(xp.Time_field, md))
 					{
-						webs.findElement(By.xpath(xp.Time_field)).sendKeys(R_time);
+						//md.findElement(By.xpath(xp.Time_field)).sendKeys(R_time);
+						
+						((MobileElement) md.findElement(By.xpath(xp.Time_field))).setValue(R_time);
+						
 						System.out.println("Time field is found and data is entered successfully");
 						
-						if(ut.IsElementPresent(xp.Add_Ingredient_button, webs))
+						if(ut.IsElementPresent(xp.Add_Ingredient_button, md))
 						{
-							webs.findElement(By.xpath(xp.Add_Ingredient_button)).click();
+							md.findElement(By.xpath(xp.Add_Ingredient_button)).click();
 							System.out.println("Add Ingredient button is found and clicked successfully");
 							
-							if(ut.IsElementPresent(xp.Check_Ingredient_Screen_Appear, webs))
+							if(ut.IsElementPresent(xp.Check_Ingredient_Screen_Appear, md))
 							{
 								System.out.println("Ingredient screen is appeared successfully");
 								
-								if(ut.IsElementPresent(xp.Ingredient_Name_Field, webs))
+								if(ut.IsElementPresent(xp.Ingredient_Name_Field, md))
 								{
-									webs.findElement(By.xpath(xp.Ingredient_Name_Field)).sendKeys(R_IngName);
+									//md.findElement(By.xpath(xp.Ingredient_Name_Field)).sendKeys(R_IngName);
+									((MobileElement) md.findElement(By.xpath(xp.Ingredient_Name_Field))).setValue(R_IngName);
+									
+									
 									System.out.println("Ingredient Name is added successfully");
 									
 									/*try {
@@ -114,31 +126,31 @@ public class EditRecipe {
 									
 									System.out.println("Ingredient name and amount is entered successfully");
 							*/
-									if(ut.IsElementPresent(xp.Ingredient_Save_Button, webs))
+									if(ut.IsElementPresent(xp.Ingredient_Save_Button, md))
 									{
-										webs.findElement(By.xpath(xp.Ingredient_Save_Button)).click();
+										md.findElement(By.xpath(xp.Ingredient_Save_Button)).click();
 										System.out.println("Save Ingredient button is found and clicked successfully");
 										
 										String v3 = xp.Check_Ingredient_Added.replace("##MARKER05", R_IngName);
-										if(ut.IsElementPresent(v3, webs))
+										if(ut.IsElementPresent(v3, md))
 										{
 											System.out.println("Ingredient is added successfully");
 											
-											if(ut.IsElementPresent(xp.Done_Button_onEditScreen, webs))
+											if(ut.IsElementPresent(xp.Done_Button_onEditScreen, md))
 											{
-												webs.findElement(By.xpath(xp.Done_Button_onEditScreen)).click();
+												md.findElement(By.xpath(xp.Done_Button_onEditScreen)).click();
 												System.out.println("Done button is clicked successfully");
 												
-												if(ut.IsElementPresent(xp.Return2Rec_Button, webs))
+												if(ut.IsElementPresent(xp.Return2Rec_Button, md))
 												{
-													webs.findElement(By.xpath(xp.Return2Rec_Button)).click();
+													md.findElement(By.xpath(xp.Return2Rec_Button)).click();
 													System.out.println("**** Edit functionality is working successfully ****");
 													
 												}
 												else
 												{
 													System.err.println("Return to recipe button is not clicked successfully");
-													webs.quit();
+													md.quit();
 												}
 												
 												
@@ -146,68 +158,68 @@ public class EditRecipe {
 											else
 											{
 												System.err.println("Done button is not found from Edit Recipe");
-												webs.quit();
+												md.quit();
 											}
 											
 										}
 										else
 										{
 											System.err.println("Ingredient is not added successfully");
-											webs.quit();
+											md.quit();
 										}
 										
 									}
 									else
 									{
 										System.err.println("Save Ingredient button is not found");
-										webs.quit();
+										md.quit();
 									}
 									
 								}
 								else
 								{
 									System.err.println("Ingredient name field is not appeared successfully");
-									webs.quit();
+									md.quit();
 								}
 								
 							}
 							else
 							{
 								System.err.println("Ingredient screen is not appeared successfully");
-								webs.quit();
+								md.quit();
 							}
 							
 						}
 						else
 						{
 							System.err.println("Add Ingredient button is not found");
-							webs.quit();
+							md.quit();
 						}
 						
 					}
 					else
 					{
 						System.err.println("Recipe Time Field is not found");
-						webs.quit();
+						md.quit();
 					}
 					
 				}
 				else
 				{
 					System.err.println("Overview Field is not found");
-					webs.quit();
+					md.quit();
 				}
 			}
 			else
 			{
 				System.err.println("Edit Recipe Screen is not appeared successfully");
-				webs.quit();
+				md.quit();
 			}
 		}
 		else
 		{
 			System.err.println("Recipe is not found in Main Recipe List");
-			webs.quit();
+			md.quit();
 			
 		}
 		

@@ -34,7 +34,7 @@ public class RunnerClass {
 		
 	
 		try {
-			wd = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			ad = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -73,7 +73,7 @@ public class RunnerClass {
 			System.out.println("The Recipe Description is: " + Rdesc);
 			System.out.println("The Recipe time is: " + Rtime);
 			
-			ar.AddRecipe_func(wd, xp, Rname, Rdesc, Rtime);
+			ar.AddRecipe_func(ad, xp, Rname, Rdesc, Rtime);
 				
 		
 		}
@@ -111,7 +111,7 @@ public class RunnerClass {
 			System.out.println("The Recipe Ingredients is: " + Rcp_IngName);
 			System.out.println("The Recipe Ingredient amount is: " + Rcp_IngAmnt);
 			
-			er.Edit_Recipe(wd, xp, Rcp_Name, Rcp_overview, Rcp_time, Rcp_IngName, Rcp_IngAmnt);
+			er.Edit_Recipe(ad, xp, Rcp_Name, Rcp_overview, Rcp_time, Rcp_IngName, Rcp_IngAmnt);
 			
 		}
 		
@@ -135,7 +135,7 @@ public class RunnerClass {
 			System.out.println("The Recipe Name is: " + R_name_4_category);
 			System.out.println("The Recipe Name is: " + R_category);
 			
-			ac.AddCategory(wd, xp, R_name_4_category, R_category);
+			ac.AddCategory(ad, xp, R_name_4_category, R_category);
 			
 			
 		}
@@ -157,14 +157,14 @@ public class RunnerClass {
 			
 			System.out.println("The Recipe Name is: " + Rcp_delete_Name);
 			
-			dr.DeleteRecipe(wd, xp, Rcp_delete_Name);
+			dr.DeleteRecipe(ad, xp, Rcp_delete_Name);
 			
 		}
 		
 		//********* Ends Delete Recipe Code ************//
 		
 		
-		//wd.quit();
+		ad.quit();
 		
 	}
 

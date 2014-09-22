@@ -1,5 +1,7 @@
 package testcases;
 
+import io.appium.java_client.*;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,34 +32,37 @@ public class AddIngredients {
 	}
 	
 	
-	public void Add_Ingredient(WebDriver webs, XPaths xp, String Iname, String Iamount)
+	public void Add_Ingredient(MobileDriver webs, XPaths xp, String Iname, String Iamount)
 	{
 		
 		Utility ut = new Utility();
+		MobileDriver md = null;
 		
-		if(ut.IsElementPresent(xp.Add_Ingredient_button, webs))
+		md = (MobileDriver) webs;
+		
+		if(ut.IsElementPresent(xp.Add_Ingredient_button, md))
 		{
-			webs.findElement(By.xpath(xp.Add_Ingredient_button)).click();
+			md.findElement(By.xpath(xp.Add_Ingredient_button)).click();
 			System.out.println("Add Ingredient button is found and clicked successfully");
 			
-			if(ut.IsElementPresent(xp.Check_Ingredient_Screen_Appear, webs))
+			if(ut.IsElementPresent(xp.Check_Ingredient_Screen_Appear, md))
 			{
 				System.out.println("Ingredient screen is appeared successfully");
 				
-				if(ut.IsElementPresent(xp.Ingredient_Name_Field, webs))
+				if(ut.IsElementPresent(xp.Ingredient_Name_Field, md))
 				{
-					webs.findElement(By.xpath(xp.Ingredient_Name_Field)).sendKeys(Iname);
-					webs.findElement(By.xpath(xp.Ingredient_Amount_Field)).sendKeys(Iamount);
+					md.findElement(By.xpath(xp.Ingredient_Name_Field)).sendKeys(Iname);
+					md.findElement(By.xpath(xp.Ingredient_Amount_Field)).sendKeys(Iamount);
 					System.out.println("Ingredient name and amount is entered successfully");
 					
-					if(ut.IsElementPresent(xp.Ingredient_Save_Button, webs))
+					if(ut.IsElementPresent(xp.Ingredient_Save_Button, md))
 					{
-						webs.findElement(By.xpath(xp.Ingredient_Save_Button)).click();
+						md.findElement(By.xpath(xp.Ingredient_Save_Button)).click();
 						System.out.println("Save Ingredient button is found and clicked successfully");
 						
 						String v3 = xp.Check_Ingredient_Added.replace("##MARKER05", Iname);
 						
-						if(ut.IsElementPresent(v3, webs))
+						if(ut.IsElementPresent(v3, md))
 						{
 							System.out.println("Ingredient is added successfully");
 							
@@ -65,35 +70,35 @@ public class AddIngredients {
 						else
 						{
 							System.err.println("Ingredient is not added successfully");
-							webs.quit();
+							md.quit();
 						}
 						
 					}
 					else
 					{
 						System.err.println("Save Ingredient button is not found");
-						webs.quit();
+						md.quit();
 					}
 					
 				}
 				else
 				{
 					System.err.println("Ingredient name field is not appeared successfully");
-					webs.quit();
+					md.quit();
 				}
 				
 			}
 			else
 			{
 				System.err.println("Ingredient screen is not appeared successfully");
-				webs.quit();
+				md.quit();
 			}
 			
 		}
 		else
 		{
 			System.err.println("Add Ingredient button is not found");
-			webs.quit();
+			md.quit();
 		}
 		
 	}
