@@ -7,7 +7,7 @@
 		<java classname="main.RunnerClass" fork="true" maxmemory="12288m">
 			<classpath>
 
-				<pathelement location="${SRC}" />
+				<pathelement location="${BIN}" />
 				<fileset dir="${LIB}">
 					<include name="**/*.jar" />
 				</fileset>
