@@ -8,7 +8,7 @@
 	</target>
 
 	<target name="compile" depends="makedir">
-		<javac srcdir="${SRC}" destdir="${BIN}">
+		<javac srcdir="${SRC}" destdir="${BIN}" includeantruntime="false">
 			<classpath>
 
 				<pathelement path="${BIN}" />
