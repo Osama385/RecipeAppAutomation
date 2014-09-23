@@ -102,28 +102,28 @@ public class AddRecipe {
 							}
 							else
 							{
-								System.err.println("Recipe is not found in Main Recipe List");
+								System.err.println("===>> Recipe is not found in Main Recipe List");
 								md.quit();
 							}
 							
 						}
 						else
 						{
-							System.err.println("Return to Recipe button is not found");
+							System.err.println("===>> Return to Recipe button is not found");
 							md.quit();
 						}
 						
 					}
 					else
 					{
-						System.err.println("Recipe Name is not found");
+						System.err.println("===>> Recipe Name is not found");
 						md.quit();
 					}
 					
 				}
 				else
 				{
-					System.err.println("Save Recipe button is not found");
+					System.err.println("===>> Save Recipe button is not found");
 					md.quit();
 				}
 				
@@ -131,14 +131,14 @@ public class AddRecipe {
 			}
 			else
 			{                        
-				System.err.println("Recipe Name field is not found");
+				System.err.println("===>> Recipe Name field is not found");
 				md.quit();
 			}
 			
 		}
 		else 
 		{
-			System.err.println("Add button is not found");
+			System.err.println("===>> Add button is not found");
 			md.quit();
 		}
 		
