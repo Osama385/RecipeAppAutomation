@@ -63,7 +63,7 @@ public class AddRecipe {
 		//MobileElement me = null;
 		if(ut.IsElementPresent(xp.Add_button, md))
 		{
-			//md.findElement(By.xpath(xp.Add_button)).click();
+			md.findElement(By.xpath(xp.Add_button)).click();
 			System.out.println("Add button is found and clicked successfully from Recipe Home Screen");
 			
 			if(ut.IsElementPresent(xp.Recipe_Name_Field, md))

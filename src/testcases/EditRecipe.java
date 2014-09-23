@@ -59,7 +59,7 @@ public class EditRecipe {
 		Recipe_Name = recipe_Name;
 	}
 
-	public void Edit_Recipe(MobileDriver webs, XPaths xp, String R_Name, String R_overview, String R_time, String R_IngName, String R_IngAmnt)
+	public void Edit_Recipe(MobileDriver webs, XPaths xp, String R_Name, String R_overview, String R_time, String R_IngName, String R_IngAmnt) throws Exception
 	{
 		
 		Utility ut = new Utility();
@@ -111,6 +111,8 @@ public class EditRecipe {
 									
 									
 									System.out.println("Ingredient Name is added successfully");
+									
+									((MobileElement) md.findElement(By.xpath(xp.Ingredient_Amount_Field))).setValue(R_IngAmnt);
 									
 									/*try {
 										Thread.sleep(5000);

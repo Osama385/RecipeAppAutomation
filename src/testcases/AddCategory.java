@@ -92,34 +92,34 @@ public class AddCategory {
 										}
 										else
 										{
-											System.err.println("Return to recipe button is not clicked successfully");
+											System.err.println("===>> Return to recipe button is not clicked successfully");
 											md.quit();
 										}
 										
 									}
 									else
 									{
-										System.err.println("Done button on Edit Recipe screen is not found");
+										System.err.println("===>> Done button on Edit Recipe screen is not found");
 										md.quit();
 									}
 								}
 								else
 								{
-									System.err.println("Category is not added successfully");
+									System.err.println("===>> Category is not added successfully");
 									md.quit();
 								}
 								
 							}
 							else
 							{
-								System.err.println("Done button is not found on Category Screen");
+								System.err.println("===>> Done button is not found on Category Screen");
 								md.quit();
 							}
 							
 						}
 						else
 						{
-							System.err.println("Category is not available in list");
+							System.err.println("===>> Category is not available in list");
 							md.quit();
 						}
 						
@@ -127,7 +127,7 @@ public class AddCategory {
 					}
 					else
 					{
-						System.err.println("Category Selection screen is not appeared successfully");
+						System.err.println("===>> Category Selection screen is not appeared successfully");
 						md.quit();
 						
 					}
@@ -136,14 +136,14 @@ public class AddCategory {
 				}
 				else
 				{
-					System.err.println("More info Category button is not found");
+					System.err.println("===>> More info Category button is not found");
 					md.quit();
 				}
 				
 			}
 			else
 			{
-				System.err.println("Edit button is not found");
+				System.err.println("===>> Edit button is not found");
 				md.quit();
 					
 			}
@@ -151,7 +151,7 @@ public class AddCategory {
 		}
 		else
 		{
-			System.err.println("No recipe available with name" + Recipe_name + "to add Category");
+			System.err.println("===>> No recipe available with name" + Recipe_name + "to add Category");
 			md.quit();
 		}
 		

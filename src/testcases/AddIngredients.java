@@ -69,35 +69,35 @@ public class AddIngredients {
 						}
 						else
 						{
-							System.err.println("Ingredient is not added successfully");
+							System.err.println("===>> Ingredient is not added successfully");
 							md.quit();
 						}
 						
 					}
 					else
 					{
-						System.err.println("Save Ingredient button is not found");
+						System.err.println("===>> Save Ingredient button is not found");
 						md.quit();
 					}
 					
 				}
 				else
 				{
-					System.err.println("Ingredient name field is not appeared successfully");
+					System.err.println("===>> Ingredient name field is not appeared successfully");
 					md.quit();
 				}
 				
 			}
 			else
 			{
-				System.err.println("Ingredient screen is not appeared successfully");
+				System.err.println("===>> Ingredient screen is not appeared successfully");
 				md.quit();
 			}
 			
 		}
 		else
 		{
-			System.err.println("Add Ingredient button is not found");
+			System.err.println("===>> Add Ingredient button is not found");
 			md.quit();
 		}
 		
