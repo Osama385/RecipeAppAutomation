@@ -14,6 +14,7 @@ import testcases.AddCategory;
 import testcases.AddRecipe;
 import testcases.DeleteRecipe;
 import testcases.EditRecipe;
+import testcases.EditRecipe1;
 import utility.XPaths;
 import main.ExcelReader;
 
@@ -92,7 +93,7 @@ public class RunnerClass {
 		String Rcp_IngName;
 		String Rcp_IngAmnt;
 		
-		EditRecipe er = new EditRecipe();
+		EditRecipe1 er = new EditRecipe1();
 		
 		for(int rows=0; rows<excelFile.getRowCount("EditRecipe"); rows++)
 		{
