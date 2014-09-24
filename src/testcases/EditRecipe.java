@@ -1,7 +1,9 @@
 package testcases;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -64,7 +66,7 @@ public class EditRecipe {
 		
 		Utility ut = new Utility();
 		MobileDriver md = null;
-		
+		AppiumDriver ad1 = null;
 		md = (MobileDriver) webs;
 		String v1 = xp.Recipe_List.replace("##MARKER", R_Name);
 		
@@ -112,7 +114,9 @@ public class EditRecipe {
 									
 									System.out.println("Ingredient Name is added successfully");
 									
-									((MobileElement) md.findElement(By.xpath(xp.Ingredient_Amount_Field))).setValue(R_IngAmnt);
+									//((MobileElement) md.findElement(By.xpath(xp.Ingredient_Amount_Field))).setValue(R_IngAmnt);
+									
+
 									
 									/*try {
 										Thread.sleep(5000);
