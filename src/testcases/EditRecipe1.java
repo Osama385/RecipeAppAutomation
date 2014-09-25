@@ -116,7 +116,7 @@ public class EditRecipe1 {
 
 									if(ut.IsElementPresent(xp.Ingredient_Amount_Field, md))
 									{
-										((MobileElement) md.findElement(By.xpath("//UIATableCell/descendant::UIATextField[@value='Amount']"))).setValue(R_IngAmnt);
+										//((MobileElement) md.findElement(By.xpath("//UIATableCell/descendant::UIATextField[@value='Amount']"))).setValue(R_IngAmnt);
 										System.out.println("Ingredient amount field is not found");
 
 										if(ut.IsElementPresent(xp.Ingredient_Save_Button, md))
