@@ -92,8 +92,6 @@ public class DeleteRecipe {
 			md.quit();
 		}
 			
-					
-			
 		
 	}
 

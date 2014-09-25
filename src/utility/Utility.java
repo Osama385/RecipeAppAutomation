@@ -2,16 +2,9 @@ package utility;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByXPath;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-
-import com.thoughtworks.selenium.Selenium;
 
 
 
@@ -32,8 +25,9 @@ public class Utility{
 	}
 	catch (Exception e)
 	{
-		System.out.println("\nException found");
-		e.printStackTrace();
+		System.out.println(xpat + " not found ");
+		//e.printStackTrace();
+		
 	}
 	return s;
 	}

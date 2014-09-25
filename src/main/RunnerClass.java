@@ -55,13 +55,8 @@ public class RunnerClass {
 		String Rdesc = null;
 		String Rtime = null;
 		
-		
-
-		
 		AddRecipe ar = new AddRecipe("","","");
 		
-		
-
 		
 		for(int rows=0; rows<excelFile.getRowCount("AddRecipe"); rows++)
 		{
@@ -75,7 +70,6 @@ public class RunnerClass {
 			System.out.println("The Recipe time is: " + Rtime);
 			
 			ar.AddRecipe_func(ad, xp, Rname, Rdesc, Rtime);
-				
 		
 		}
 		
@@ -97,8 +91,7 @@ public class RunnerClass {
 		
 		for(int rows=0; rows<excelFile.getRowCount("EditRecipe"); rows++)
 		{
-			
-
+		
 			Rcp_Name = excelFile.getExcelCellValue(rows, 0);
 			Rcp_overview = excelFile.getExcelCellValue(rows, 1);
 			Rcp_time = excelFile.getExcelCellValue(rows, 2);
@@ -115,7 +108,8 @@ public class RunnerClass {
 			er.Edit_Recipe(ad, xp, Rcp_Name, Rcp_overview, Rcp_time, Rcp_IngName, Rcp_IngAmnt);
 			
 		}
-		
+		//closeSimulatorAndInstruments();
+	//	appium = Runtime.getRuntime().exec("/usr/local/bin/appium");
 		
 		//********* End Edit Recipe Code ************//
 		

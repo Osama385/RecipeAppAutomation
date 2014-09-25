@@ -114,24 +114,6 @@ public class EditRecipe {
 									
 									System.out.println("Ingredient Name is added successfully");
 									
-									//((MobileElement) md.findElement(By.xpath(xp.Ingredient_Amount_Field))).setValue(R_IngAmnt);
-									
-
-									
-									/*try {
-										Thread.sleep(5000);
-									} catch (InterruptedException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-										webs.quit();
-									}
-									System.out.println(R_IngAmnt);
-									
-									webs.findElement(By.xpath(xp.Ingredient_Amount_Field)).sendKeys(R_IngAmnt);
-									
-									
-									System.out.println("Ingredient name and amount is entered successfully");
-							*/
 									if(ut.IsElementPresent(xp.Ingredient_Save_Button, md))
 									{
 										md.findElement(By.xpath(xp.Ingredient_Save_Button)).click();
