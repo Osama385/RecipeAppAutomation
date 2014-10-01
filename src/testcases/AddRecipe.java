@@ -68,6 +68,7 @@ public class AddRecipe {
 			
 			if(ut.IsElementPresent(xp.Recipe_Name_Field, md))
 			{
+				//test
 				//test commit
 				//md.findElement(By.xpath(xp.Recipe_Name_Field)).sendKeys(Rname);
 				System.out.println("Add button is found and clicked successfully from Recipe Home Screen");
