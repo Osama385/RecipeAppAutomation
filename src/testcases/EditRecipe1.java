@@ -161,7 +161,7 @@ public class EditRecipe1 {
 
 													{
 
-														System.err.println("Return to recipe button is not clicked successfully");
+														System.err.println("Error ===>> Return to recipe button is not clicked successfully");
 
 														md.quit();
 
@@ -175,7 +175,7 @@ public class EditRecipe1 {
 
 												{
 
-													System.err.println("===> Done button is not found from Edit Recipe");
+													System.err.println("Error ===>> Done button is not found from Edit Recipe");
 													md.quit();
 
 												}
@@ -187,7 +187,7 @@ public class EditRecipe1 {
 
 											{
 
-												System.err.println("===> Ingredient is not added successfully");
+												System.err.println("Error ===>> Ingredient is not added successfully");
 
 												md.quit();
 
@@ -200,7 +200,7 @@ public class EditRecipe1 {
 
 										{
 
-											System.err.println("===> Save Ingredient button is not found");
+											System.err.println("Error ===>> Save Ingredient button is not found");
 
 											md.quit();
 
@@ -209,54 +209,54 @@ public class EditRecipe1 {
 									}
 									else
 									{
-										System.err.println("===> Ingredient Amount field is not found");
+										System.err.println("Error ===>> Ingredient Amount field is not found");
 										md.quit();
 									}
 
 								}
 								else
 								{
-									System.err.println("===> Ingredient name field is not appeared successfully");
+									System.err.println("Error ===>> Ingredient name field is not appeared successfully");
 									md.quit();
 								}
 
 							}
 							else
 							{
-								System.err.println("===> Ingredient screen is not appeared successfully");
+								System.err.println("Error ===>> Ingredient screen is not appeared successfully");
 								md.quit();
 							}
 
 						}
 						else
 						{
-							System.err.println("===> Add Ingredient button is not found");
+							System.err.println("Error ===>> Add Ingredient button is not found");
 							md.quit();
 						}
 
 					}
 					else
 					{
-						System.err.println("===> Recipe Time Field is not found");
+						System.err.println("Error ===>> Recipe Time Field is not found");
 						md.quit();
 					}
 
 				}
 				else
 				{
-					System.err.println("===> Overview Field is not found");
+					System.err.println("Error ===>> Overview Field is not found");
 					md.quit();
 				}
 			}
 			else
 			{
-				System.err.println("===> Edit Recipe Screen is not appeared successfully");
+				System.err.println("Error ===>> Edit Recipe Screen is not appeared successfully");
 				md.quit();
 			}
 		}
 		else
 		{
-			System.err.println("===> Recipe is not found in Main Recipe List");
+			System.err.println("Error ===>> Recipe is not found in Main Recipe List");
 			md.quit();
 
 		}

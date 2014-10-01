@@ -59,21 +59,21 @@ public class DeleteRecipe {
 						}
 						else
 						{
-							System.err.println("===>> Done Button after Delete Recipe is not found");
+							System.err.println("Error ===>> Done Button after Delete Recipe is not found");
 							md.quit();
 						}
 						
 					}
 					else
 					{
-						System.err.println("===>> Delete button is not found");
+						System.err.println("Error ===>> Delete button is not found");
 						md.quit();
 					}
 					
 				}
 				else
 				{
-					System.err.println("===>> Delete switch is not found");
+					System.err.println("Error ===>> Delete switch is not found");
 					md.quit();
 				}
 					
@@ -81,14 +81,14 @@ public class DeleteRecipe {
 			}
 			else
 			{
-				System.err.println("===>> Edit button is not found");
+				System.err.println("Error ===>> Edit button is not found");
 				md.quit();
 					
 			}
 		}
 		else
 		{
-			System.err.println("===>> Recipe is not available in Main Recipe List");
+			System.err.println("Error ===>> Recipe is not available in Main Recipe List");
 			md.quit();
 		}
 			
