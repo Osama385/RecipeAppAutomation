@@ -63,13 +63,13 @@ public class AddRecipe {
 		//MobileElement me = null;
 		if(ut.IsElementPresent(xp.Add_button, md))
 		{
-			md.findElement(By.xpath(xp.Add_button)).click();
-			System.out.println("Add button is found and clicked successfully from Recipe Home Screen");
+			//md.findElement(By.xpath(xp.Add_button)).click();
+			//System.out.println("Add button is found and clicked successfully from Recipe Home Screen");
 			
 			if(ut.IsElementPresent(xp.Recipe_Name_Field, md))
 			{
 				//md.findElement(By.xpath(xp.Recipe_Name_Field)).sendKeys(Rname);
-				
+				System.out.println("Add button is found and clicked successfully from Recipe Home Screen");
 				((MobileElement) md.findElement(By.xpath(xp.Recipe_Name_Field))).setValue(Rname);
 				System.out.println("Recipe name field is found and data is entered successfully");
 				
@@ -102,28 +102,28 @@ public class AddRecipe {
 							}
 							else
 							{
-								System.err.println("===>> Recipe is not found in Main Recipe List");
+								System.err.println("Error ===>> Recipe is not found in Main Recipe List");
 								md.quit();
 							}
 							
 						}
 						else
 						{
-							System.err.println("===>> Return to Recipe button is not found");
+							System.err.println("Error ===>> Return to Recipe button is not found");
 							md.quit();
 						}
 						
 					}
 					else
 					{
-						System.err.println("===>> Recipe Name is not found");
+						System.err.println("Error ===>> Recipe Name is not found");
 						md.quit();
 					}
 					
 				}
 				else
 				{
-					System.err.println("===>> Save Recipe button is not found");
+					System.err.println("Error ===>> Save Recipe button is not found");
 					md.quit();
 				}
 				
@@ -131,14 +131,14 @@ public class AddRecipe {
 			}
 			else
 			{                        
-				System.err.println("===>> Recipe Name field is not found");
+				System.err.println("Error ===>> Recipe Name field is not found");
 				md.quit();
 			}
 			
 		}
 		else 
 		{
-			System.err.println("===>> Add button is not found");
+			System.err.println("Error ===>> Add button is not found");
 			md.quit();
 		}
 		
