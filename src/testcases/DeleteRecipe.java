@@ -48,6 +48,8 @@ public class DeleteRecipe {
 					String vv3 = xp.Delete_Button_Recipe.replace("##MARKER03", del_Rname);
 					if(ut.IsElementPresent(vv3, md))
 					{
+						System.out.println("checking" + del_Rname + "value");
+						
 						md.findElement(By.xpath(vv3)).click();
 						System.out.println("Delete button is found and Clicked successfully");
 						
