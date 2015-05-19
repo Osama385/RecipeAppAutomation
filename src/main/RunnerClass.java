@@ -26,7 +26,7 @@ public class RunnerClass {
 		AppiumDriver ad = null;
 		
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("appium-version", "1.0");
+		capabilities.setCapability("appium-version", "1.0"); //appium version
 		capabilities.setCapability("platformName", "iOS");
 		capabilities.setCapability("platformVersion", "8.2");
 		capabilities.setCapability("deviceName", "iPad 2");
