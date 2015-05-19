@@ -1,4 +1,4 @@
-package main;
+          package main;
 
 import io.appium.java_client.AppiumDriver;
 
@@ -28,8 +28,8 @@ public class RunnerClass {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("appium-version", "1.0");
 		capabilities.setCapability("platformName", "iOS");
-		capabilities.setCapability("platformVersion", "7.1");
-		capabilities.setCapability("deviceName", "iPhone Retina (3.5-inch)");
+		capabilities.setCapability("platformVersion", "8.2");
+		capabilities.setCapability("deviceName", "iPad 2");
 		capabilities.setCapability("app", "/Users/umairrashid/Downloads/iPhoneCoreDataRecipes/build/Release-iphonesimulator/Recipes.app");
 		//capabilities.setCapability("app", "/Users/Shared/Jenkins/Home/jobs/Guild2 Job/workspace/build/Debug-iphoneos/CII.app");
 		
