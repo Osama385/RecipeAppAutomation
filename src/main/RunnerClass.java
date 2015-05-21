@@ -41,7 +41,7 @@ public class RunnerClass {
 			e.printStackTrace();
 		}
 		
-		//String lWorkDir = new String(System.getProperty("user.dir")); //test1 2a
+		//String lWorkDir = new String(System.getProperty("user.dir")); //test1 2aa
 		ExcelReader excelFile = new ExcelReader("AddRecipe.xlsx");
 		
 		XPaths xp = new XPaths();
