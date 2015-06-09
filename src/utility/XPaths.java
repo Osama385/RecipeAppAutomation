@@ -30,10 +30,18 @@ public class XPaths {
 	
 	public String Check_Recipe_In_List = "//UIATableView/following::UIAStaticText[contains(@name,'##MARKER01')]";
 	
-	public String Delete_Switch_Recipe = "//UIATableView/following::UIASwitch[contains(@name,'##MARKER02')]";
+public String Delete_Switch_Recipe = "//UIATableView/following::UIAButton[contains(@name,'##MARKER02')]";
 	
-	public String Delete_Button_Recipe = 
-			"//UIATableView/following::UIASwitch[contains(@name,'##MARKER03')]/parent::UIATableCell/child::UIAButton[@name='Delete']";
+	public String Delete_Button_Recipe = "//UIATableView/following::UIAStaticText[contains(@name,'##MARKER03')]/parent::UIATableCell/child::UIAButton[2]";
+	
+	
+	
+//	public String Delete_Switch_Recipe = "//UIATableView/following::UIASwitch[contains(@name,'##MARKER02')]";
+	
+//	public String Delete_Button_Recipe = 
+	//		"//UIATableView/following::UIASwitch[contains(@name,'##MARKER03')]/parent::UIATableCell/child::UIAButton[@name='Delete']";
+	
+	////UIATableView/following::UIAButton[contains(@name,'myRecipe')]
 	
 	
 
@@ -65,7 +73,10 @@ public class XPaths {
 	
 	public String Check_Recipe_In_List1 = "//UIATableView/following::UIAStaticText[contains(@name,'##MARKER12')]";
 	
-	public String Recipe_Cat_MoreInfo_button = "//UIATableCell/following::UIAElement[contains(@name,'More info')]";
+	//public String Recipe_Cat_MoreInfo_button = "//UIATableCell/following::UIAElement[contains(@name,'More info')]";
+	
+	public String Recipe_Cat_MoreInfo_button = "//UIATableCell/following::UIAElement[contains(@name,'More Info')]";
+	//UIATableCell/following::UIAElement[contains(@name,'More Info')]
 	
 	public String Verify_Category_Screen = "//UIANavigationBar/descendant::UIAStaticText[@name='Category']";
 	
