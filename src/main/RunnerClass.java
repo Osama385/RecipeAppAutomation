@@ -15,6 +15,7 @@ import testcases.AddRecipe;
 import testcases.DeleteRecipe;
 import testcases.EditRecipe;
 import testcases.EditRecipe1;
+import testcases.UploadImage;
 import utility.XPaths;
 import main.ExcelReader;
 
@@ -139,6 +140,33 @@ public class RunnerClass {
 		//********* End Add Category in Recipe Code ************//
 		
 		
+		//********* Starts Upload Image Code ****************//
+		
+        String Rcp_uploadImage_Name;
+		
+		UploadImage ui = new UploadImage();
+		
+		for(int rows=0; rows<excelFile.getRowCount("UploadImage"); rows++)
+		{
+			
+			Rcp_uploadImage_Name = excelFile.getExcelCellValue(rows, 0);
+			
+			System.out.println("The Recipe Name is: " + Rcp_uploadImage_Name);
+			
+			ui.Upload_Image(ad, xp, Rcp_uploadImage_Name);
+			
+			
+		}
+		
+		
+		
+		//******** Ends Upload Image Code ************//
+		
+		
+		
+		
+		
+		
 		//********* Starts Delete Recipe Code ************//
 
 		String Rcp_delete_Name;
@@ -158,6 +186,10 @@ public class RunnerClass {
 		}
 		
 		//********* Ends Delete Recipe Code ************//
+		
+		
+		
+		
 		
 		
 		ad.quit();

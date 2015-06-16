@@ -92,6 +92,23 @@ public String Delete_Switch_Recipe = "//UIATableView/following::UIAButton[contai
 	//public String Recipe_Created = "//UIANavigationBar/descendant::UIAStaticText[@name='rec']";
 	
 	//UIATableView/UIATableCell[8]/descendant::UIAStaticText[contains(@name,'rec')]
+	
+	
 
+	//Choose Photo Xpaths....
+	
+	public String Choose_Photo_Button = "//UIAApplication/descendant::UIAButton[contains(@name,'choosePhoto')]";
+	
+    public String Photo_OK_button = "//UIAApplication[contains(@name,'SpringBoard')]/descendant::UIAAlert[contains(@name,'Recipe')]/descendant::*[contains(@name,'OK')]";
 
+    public String Photo_DontAllow_button = "//UIAApplication[contains(@name,'SpringBoard')]/descendant::UIAAlert[contains(@name,'Recipe')]/descendant::*[contains(@name,'Allow')]";
+    
+    public String Cancel_button_photos = "//UIAApplication/descendant::UIANavigationBar[contains(@name,'Photos')]/descendant::UIAButton[contains(@name,'Cancel')]";
+    
+    public String Camera_Roll = "//UIAApplication/descendant::UIATableView/following::UIATableCell[contains(@name,'Camera')]";
+    
+    public String Image_selection = "//UIAApplication/descendant::UIACollectionCell[2]";
+    
+    
+    
 }
